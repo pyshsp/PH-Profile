@@ -4,34 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile | Data & Event Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-gold: #c5a880;
             --bg-light: #fcfbfa;
             --bg-section: #f4f0ec;
-            --text-dark: #2c2c2c;
-            --text-muted: #ffffff;
+            --text-dark: #2c2c2c; /* สีมืดหลัก */
+            --text-muted: #444444; /* ปรับให้มืดลงจากเดิมเพื่อให้อ่านง่าย */
             --white: #ffffff;
         }
 
         body {
-            /* ใช้ Kanit เป็นฟอนต์หลักเพื่อให้ดูทันสมัยและแข็งแรง */
             font-family: 'Kanit', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.7;
-            text-align: left; /* บังคับชิดซ้ายทั้งหน้าเว็บ */
         }
 
-        /* ใช้ Oswald สำหรับหัวข้อเพื่อให้ดู Strong และเป็นทรงเหลี่ยม */
         h1, h2, h3 { 
-            font-family: 'Oswald', sans-serif; 
+            font-family: 'Oswald', sans-serif;
             font-weight: 700; 
             margin: 0; 
-            text-transform: uppercase; /* ตัวพิมพ์ใหญ่ช่วยให้ดูแข็งแรงขึ้น */
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
         
@@ -50,103 +47,143 @@
             z-index: 100;
         }
 
-        nav .logo { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dark); }
+        nav .logo { 
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
         nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
-        nav ul li a { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); transition: color 0.3s; text-transform: uppercase; }
+        nav ul li a { 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            color: var(--text-dark); 
+            transition: color 0.3s; 
+            text-transform: uppercase;
+        }
         nav ul li a:hover { color: var(--primary-gold); }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(244, 240, 236, 0.5), rgba(244, 240, 236, 0.8)), url('sidegraduate.jpg') center/cover;
+            background: linear-gradient(rgba(244, 240, 236, 0.4), rgba(244, 240, 236, 0.7)), url('sidegraduate.jpg') center/cover;
             height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; /* เปลี่ยนเป็นชิดซ้าย */
-            text-align: left; /* เปลี่ยนเป็นชิดซ้าย */
-            padding: 0 10%;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
         }
 
-        .hero h1 { font-size: 4rem; color: var(--text-dark); margin-bottom: 5px; line-height: 1.1; }
-        .hero p { font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;}
+        .hero h1 { font-size: 4rem; color: var(--text-dark); margin-bottom: 10px; }
+        
+        /* แก้ไขส่วนนี้: ปรับสีตัวอักษรให้มืดลง (Darker Text) */
+        .hero p { 
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem; 
+            color: #1a1a1a; /* ใช้สีเกือบดำเพื่อให้ตัดกับพื้นหลังชัดเจน */
+            margin-bottom: 30px; 
+            max-width: 600px; 
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5); /* เพิ่มเงาขาวบางๆ ช่วยให้อ่านง่ายขึ้น */
+        }
 
         .btn-gold {
-            background-color: var(--text-dark); /* เปลี่ยนเป็นสีเข้มให้ดูแข็งแรง */
-            color: var(--white);
-            padding: 15px 40px;
             font-family: 'Oswald', sans-serif;
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 12px 40px;
+            border-radius: 0;
             font-size: 1rem;
-            text-transform: uppercase;
+            font-weight: 600;
             letter-spacing: 2px;
+            text-transform: uppercase;
             transition: all 0.3s;
             display: inline-block;
         }
 
-        .btn-gold:hover { background-color: var(--primary-gold); transform: translateX(10px); }
+        .btn-gold:hover { background-color: var(--primary-gold); transform: translateY(-2px); }
 
         /* Global Section */
-        section { padding: 80px 10%; max-width: 1200px; margin: 0; }
-        .section-title { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 5px; text-align: left; }
-        .section-subtitle { font-size: 1rem; color: var(--primary-gold); margin-bottom: 50px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; text-align: left; }
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; color: var(--text-dark); margin-bottom: 15px; }
+        .section-subtitle { 
+            font-family: 'Oswald', sans-serif;
+            text-align: center; 
+            font-size: 1rem; 
+            color: var(--primary-gold); 
+            margin-bottom: 50px; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            font-weight: 600;
+        }
 
         /* About Grid */
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
-        .about-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.05rem; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text p { margin-bottom: 20px; color: #333; font-size: 1.05rem; }
         .about-image { 
             background: url('Graduate1.jpg') center/cover; 
-            height: 500px; 
-            box-shadow: 20px 20px 0px var(--bg-section); /* เพิ่มเงาแบบเหลี่ยม */
+            height: 450px; 
+            box-shadow: 15px 15px 0px var(--primary-gold);
         }
 
         /* Skills Grid */
         .bg-section { background-color: var(--bg-section); width: 100%; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .skill-card {
             background-color: var(--white);
-            padding: 40px;
-            text-align: left; /* ชิดซ้าย */
+            padding: 40px 30px;
+            text-align: center;
             transition: all 0.3s;
-            border-left: 5px solid transparent;
+            border-bottom: 4px solid transparent;
         }
-        .skill-card:hover { border-left: 5px solid var(--primary-gold); background-color: #fff; transform: scale(1.02); }
-        .skill-icon { font-size: 2rem; margin-bottom: 20px; color: var(--primary-gold); }
-        .skill-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-dark); }
-        .skill-card p { font-size: 0.95rem; color: var(--text-muted); font-family: 'Kanit', sans-serif; font-weight: 300; }
+        .skill-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--primary-gold); }
+        .skill-icon { font-size: 2.5rem; margin-bottom: 20px; }
+        .skill-card h3 { font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px; }
+        .skill-card p { font-size: 0.95rem; color: #444; font-weight: 400; }
 
         /* Timeline */
         .timeline-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start; }
         .timeline-image { 
             background: url('Graduate2.jfif') center/cover; 
-            height: 500px; 
+            height: 400px; 
             position: sticky;
             top: 100px;
         }
+        .timeline-content { display: flex; flex-direction: column; gap: 20px; }
         .timeline-item {
             background: var(--white);
-            padding: 40px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            padding: 30px;
+            border-left: 5px solid var(--primary-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
-        .timeline-date { font-family: 'Oswald', sans-serif; color: var(--primary-gold); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; display: block; }
+        .timeline-date { 
+            font-family: 'Oswald', sans-serif;
+            color: var(--primary-gold); 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            margin-bottom: 5px; 
+            display: block; 
+        }
 
         /* Footer */
-        footer { background-color: #1a1a1a; color: #ffffff; text-align: left; padding: 80px 10%; }
-        footer h2 { font-size: 3rem; margin-bottom: 20px; }
-        footer p { color: #888; margin: 10px 0; font-size: 1rem; }
+        footer { background-color: #1a1a1a; color: #ffffff; text-align: center; padding: 60px 20px; }
+        footer h2 { font-family: 'Oswald', sans-serif; font-size: 2rem; letter-spacing: 2px; }
+        footer p { color: #aaaaaa; margin: 10px 0; font-size: 0.95rem; }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .about-grid, .timeline-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-            section { padding: 60px 5%; }
-            nav { padding: 15px 20px; }
+            .hero h1 { font-size: 2.8rem; }
+            nav ul { display: none; } 
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">PIMYEESA.H</div>
+        <div class="logo">My Portfolio</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Expertise</a></li>
@@ -156,7 +193,7 @@
     </nav>
 
     <div class="hero">
-        <h1>PIMYEESA<br>HUDSAPIM</h1>
+        <h1>Pimyeesa Hudsapim</h1>
         <p>Data Management Officer</p>
         <a href="#contact" class="btn-gold">Get in Touch</a>
     </div>
@@ -166,8 +203,7 @@
         <div class="section-subtitle">About Me</div>
         <div class="about-grid">
             <div class="about-text">
-                <p>I am a 23-year-old Telecommunications Engineering graduate from Suranaree University of Technology, originally from Kalasin and currently based in Khon Kaen. I presently serve as a Data Management Officer at the Khon Kaen Provincial Statistical Office, where I am responsible for processing and preparing vital provincial databases.</p>
-                <p>With a diverse background that includes serving as a student organization leader, an event coordinator, and a volunteer rescue responder, I am now looking for new opportunities to collaborate on projects that bridge technical solutions with human-centered design.</p>
+                <p>I am a 23-year-old Telecommunications Engineering graduate from Suranaree University of Technology, originally from Kalasin and currently based in Khon Kaen. I presently serve as a Data Management Officer at the Khon Kaen Provincial Statistical Office, where I am responsible for processing and preparing vital provincial databases. With a diverse background that includes serving as a student organization leader, an event coordinator, and a volunteer rescue responder, I am now looking for new opportunities to collaborate on projects that bridge technical solutions with human-centered design.</p>
             </div>
             <div class="about-image"></div>
         </div>
@@ -180,34 +216,36 @@
             
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">🛰️</div>
+                    <div class="skill-icon">📊</div>
                     <h3>Telecommunications Engineering</h3>
-                    <p>Strong technical foundation in network configuration, on-site troubleshooting, and analysis using Wireshark and circuit simulations (Arduino IDE/EdSim51).</p>
+                    <p>I hold a Bachelor’s degree in Telecommunications Engineering from Suranaree University of Technology , providing me with a strong technical foundation in network configuration, on-site troubleshooting, and technical support. My expertise includes conducting network analysis using Wireshark, managing circuit simulations via Arduino IDE and EdSim51 , and maintaining precise customer data documentation.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🎪</div>
                     <h3>Project & Event Coordination</h3>
-                    <p>Experienced Project Designer for the Korat International Film Festival, managing everything from structural planning to final day execution.</p>
+                    <p>As a Project Designer and Event Coordinator for the Korat International Film Festival, I co-created the festival’s structure, including workshops and short film competitions. I took full responsibility for planning and executing the film screening schedules while collaborating closely with production and creative teams to ensure a smooth event flow from concept to execution.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🏛️</div>
-                    <h3>Leadership & Governance</h3>
-                    <p>Former Vice President of the Student Organization, leading large teams and representing student interests to university leadership.</p>
+                    <div class="skill-icon">🤝</div>
+                    <h3>Leadership & Student Governance</h3>
+                    <p>Serving as the Vice President of the Student Organization at Suranaree University of Technology , I led student teams in organizing diverse events such as academic talks and volunteer activities. I acted as a key representative in meetings with university leaders to share student perspectives and improve campus life through effective planning and budgeting.</p>
                 </div>
+            </div> <br>
+            <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon">🚑</div>
-                    <h3>Emergency Response</h3>
-                    <p>Over three years of experience as a Volunteer Rescue first responder, providing critical medical assessments and public safety support.</p>
+                    <h3>Emergency Response & Public Safety</h3>
+                    <p>I have dedicated over three years as a Volunteer Rescue first responder with the SUT Volunteering Club. My role involved providing initial assessments and first aid to injured individuals during accidents and public emergencies, as well as coordinating critical information with hospital units and participating in safety drills.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">💻</div>
-                    <h3>Technical Design</h3>
-                    <p>Proficient in AutoCAD, SolidWorks, and Python programming (PyCharm), alongside creative design skills in Canva and Photoshop.</p>
+                    <h3>Technical Design & Programming</h3>
+                    <p>My technical toolkit is comprised of engineering design software such as AutoCAD and SolidWorks. I am proficient in basic Python programming and scripting using PyCharm , and I possess creative skills in visual design and content creation through the use of Canva and Photoshop.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">☕</div>
-                    <h3>Business Operations</h3>
-                    <p>Entrepreneurial experience as a Café Owner, managing full-scale operations, budgeting, and digital marketing strategies.</p>
+                    <h3>Business Operations & Management</h3>
+                    <p>As the owner and barista of Tor-Mai Café , I manage all daily operations, including stock control, budgeting, and customer relationship building. I also handle the brand's digital presence by promoting the shop and managing social media content across Facebook, Instagram, and TikTok.</p>
                 </div>
             </div>
         </section>
@@ -219,35 +257,46 @@
         
         <div class="timeline-container">
             <div class="timeline-image"></div>
+            
             <div class="timeline-content">
                 <div class="timeline-item">
-                    <span class="timeline-date">PRESENT</span>
-                    <h3>Data Management Officer</h3>
-                    <p style="color: var(--primary-gold); font-weight: 600;">Khon Kaen Provincial Statistical Office</p>
-                    <p>Responsible for data management, processing, and preparing information for presentation to serve as a vital database for the province.</p>
+                    <span class="timeline-date">At present</span>
+                    <h3>Data Management Officer (Service Contract)</h3>
+                    <p style="color: var(--text-muted);">Khon Kaen Provincial Statistical Office</p>
+                    <p style="font-size: 0.95rem;">Responsible for data management, processing, and preparing information for presentation to serve as a vital database for the province.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">2025</span>
-                    <h3>B.Eng. Telecommunications Engineering</h3>
-                    <p style="color: var(--primary-gold); font-weight: 600;">Suranaree University of Technology</p>
-                    <p>Graduated with a focus on network infrastructure and communications systems. GPAX: 2.34.</p>
+                    <span class="timeline-date">September - October 2025</span>
+                    <h3>PROJECT COORDINATOR </h3>
+                    <p style="color: var(--text-muted);">AIS Tower2</p>
+                    <p style="font-size: 0.95rem;">-Prepare and verify project documents related to AIS/AWN internet installation.<br>
+-Record and update customer information in the system to support job closing and project tracking.
+</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">2024 - 2025</span>
-                    <h3>Intern – Telecom Technician Assistant</h3>
-                    <p style="color: var(--primary-gold); font-weight: 600;">National Telecom (NT)</p>
-                    <p>On-site troubleshooting, network configuration, and technical documentation support for business clients.</p>
+                    <span class="timeline-date">Febuary 2025</span>
+                    <h3>Telecommunications Engineering </h3>
+                    <p style="color: var(--text-muted);">Institute of Engineering | Suranaree University of Technology</p>
+                    <p style="font-size: 0.95rem;">GPAX 2.34</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">October 2025 - Febuary 2025</span>
+                    <h3>INTERN – TELECOM TECHNICIAN ASSISTANT </h3>
+                    <p style="color: var(--text-muted);">National Telecom Public Company Limited (NT) Angthong Province</p>
+                    <p style="font-size: 0.95rem;">- Installed and configured small to medium-sized internet networks.<br>- Conducted on-site network troubleshooting and maintenance.
+- Recorded customer data and generated technical documentation.<br>- Assisted senior technicians in project coordination and technical support.<br>-Record and update customer information in the system to support job closing and project tracking.
+</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2>GET IN TOUCH</h2>
+        <h2 style="margin-bottom: 20px; font-weight: 500; color: var(--primary-gold);">Get in Touch</h2>
         <p>Open for new opportunities to collaborate and develop projects together.</p>
-        <p style="margin-top: 30px; color: #fff;">📍 Khon Kaen, Thailand</p>
-        <p style="color: #fff;">📧 Paphzy01@gmail.com | 📞 096-375-4763</p>
-        <div style="margin-top: 40px;">
+        <p>📍Khon Kaen, Thailand</p>
+        <p>📧 Paphzy01@gmail.com | 📞 096-375-4763</p>
+        <div style="margin-top: 30px;">
             <a href="mailto:Paphzy01@gmail.com" class="btn-gold">Contact via Email</a>
         </div>
     </footer>
