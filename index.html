@@ -145,7 +145,11 @@
         .skill-card p { font-size: 0.95rem; color: #444; font-weight: 400; }
 
         /* Timeline */
-        .timeline-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start; }
+        .timeline-container {
+            position: sticky; 
+            top: 100px; /* ระยะห่างจากขอบบนเมื่อหยุดนิ่ง */
+            z-index: 5; 
+            display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start; }
         .timeline-image { 
             background: url('Graduate2.jfif') center/cover; 
             height: 400px; 
@@ -153,9 +157,6 @@
         }
         .timeline-content { display: flex; flex-direction: column; gap: 20px; }
         .timeline-item {
-            position: sticky; 
-            top: 100px; /* ระยะห่างจากขอบบนเมื่อหยุดนิ่ง */
-            z-index: 5;
             background: var(--white);
             padding: 30px;
             border-left: 5px solid var(--primary-gold);
