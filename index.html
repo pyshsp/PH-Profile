@@ -41,15 +41,15 @@
             z-index: 100;
         }
 
-        nav .logo { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-gold); }
+        nav .logo { font-size: 1.2rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-gold); }
         nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
-        nav ul li a { font-size: 0.9rem; color: var(--text-muted); transition: color 0.3s; font-weight: 400; }
+        nav ul li a { font-size: 0.95rem; color: var(--text-muted); transition: color 0.3s; }
         nav ul li a:hover { color: var(--primary-gold); }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(244, 240, 236, 0.6), rgba(244, 240, 236, 0.8)), url('sidegraduate.jpg') center/cover;
-            height: 75vh;
+            background: linear-gradient(rgba(244, 240, 236, 0.5), rgba(244, 240, 236, 0.8)), url('sidegraduate.jpg') center/cover;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -58,61 +58,63 @@
             padding: 0 20px;
         }
 
-        .hero h1 { font-size: 3.2rem; color: var(--text-dark); margin-bottom: 10px; letter-spacing: 1px; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 35px; max-width: 600px; font-weight: 300; }
+        .hero h1 { font-size: 3rem; color: var(--text-dark); margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: var(--text-dark); margin-bottom: 30px; max-width: 600px; font-weight: 400;}
 
         .btn-gold {
             background-color: var(--primary-gold);
             color: var(--white);
-            padding: 14px 35px;
+            padding: 12px 30px;
             border-radius: 30px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
         }
 
-        .btn-gold:hover { background-color: #b0946d; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(197, 168, 128, 0.4); }
+        .btn-gold:hover { background-color: #b0946d; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197,168,128,0.3); }
 
-        /* Global Section Layout */
-        section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.2rem; color: var(--text-dark); margin-bottom: 10px; }
-        .section-subtitle { text-align: center; font-size: 0.85rem; color: var(--primary-gold); margin-bottom: 60px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+        /* Global Section */
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2rem; color: var(--text-dark); margin-bottom: 15px; }
+        .section-subtitle { text-align: center; font-size: 1rem; color: var(--primary-gold); margin-bottom: 50px; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* About Section */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .about-text p { margin-bottom: 25px; color: var(--text-muted); font-size: 1.05rem; }
+        /* About Grid */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text p { margin-bottom: 20px; color: var(--text-muted); }
         .about-image { 
             background: url('Graduate1.jpg') center/cover; 
-            height: 500px; 
-            border-radius: 15px; 
-            box-shadow: 20px 20px 0px var(--bg-section);
+            height: 450px; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
         }
 
-        /* Expertise/Skills Section */
+        /* Skills/Expertise */
         .bg-section { background-color: var(--bg-section); width: 100%; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .skill-card {
             background-color: var(--white);
-            padding: 45px 35px;
-            border-radius: 15px;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: transform 0.3s;
+            border-bottom: 3px solid transparent;
         }
-        .skill-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
-        .skill-icon { font-size: 2.5rem; margin-bottom: 25px; display: block; }
-        .skill-card h3 { font-size: 1.25rem; margin-bottom: 15px; color: #1a1a1a; }
+        .skill-card:hover { transform: translateY(-10px); border-bottom: 3px solid var(--primary-gold); }
+        .skill-icon { font-size: 2.5rem; margin-bottom: 20px; }
+        .skill-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
         .skill-card p { font-size: 0.95rem; color: var(--text-muted); }
 
-        /* Projects Section */
+        /* Projects Section (New) */
         .project-card {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 15px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
             border-left: 5px solid var(--primary-gold);
-            margin-bottom: 30px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             transition: 0.3s;
         }
         .project-card:hover { transform: translateX(10px); }
@@ -120,46 +122,41 @@
             display: inline-block;
             background: var(--bg-section);
             color: var(--primary-gold);
-            padding: 4px 12px;
+            padding: 3px 12px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-top: 15px;
-            margin-right: 8px;
-            letter-spacing: 1px;
+            margin-top: 10px;
+            margin-right: 5px;
         }
 
         /* Experience Section */
-        .timeline-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; align-items: start; }
+        .timeline-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start; }
         .timeline-image { 
             background: url('Graduate2.jfif') center/cover; 
-            height: 450px; 
-            border-radius: 15px;
+            height: 400px; 
+            border-radius: 10px;
             position: sticky;
-            top: 120px;
+            top: 100px;
         }
+        .timeline-content { display: flex; flex-direction: column; gap: 20px; }
         .timeline-item {
             background: var(--white);
-            padding: 35px;
+            padding: 30px;
             border-left: 4px solid var(--primary-gold);
-            border-radius: 0 15px 15px 0;
-            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
-        .timeline-date { color: var(--primary-gold); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; display: block; }
+        .timeline-date { color: var(--primary-gold); font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; display: block; }
 
         /* Footer */
-        footer { background-color: #1a1a1a; color: #ffffff; text-align: center; padding: 80px 20px; }
-        footer p { color: #888; margin: 8px 0; font-size: 0.95rem; }
-        .footer-logo { font-size: 1.5rem; color: var(--primary-gold); margin-bottom: 20px; letter-spacing: 2px; }
+        footer { background-color: #2c2c2c; color: #ffffff; text-align: center; padding: 60px 20px; }
+        footer p { color: #aaaaaa; margin: 5px 0; font-size: 0.9rem; }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .about-grid, .timeline-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.2rem; }
-            nav { padding: 15px 20px; }
-            nav ul { display: none; }
             .timeline-image { height: 300px; position: relative; top: 0; margin-bottom: 30px; }
+            nav ul { display: none; }
         }
     </style>
 </head>
@@ -169,7 +166,7 @@
         <div class="logo">PH PORTFOLIO</div>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#skills">Expertise</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -178,91 +175,86 @@
 
     <div class="hero">
         <h1>Pimyeesa Hudsapim</h1>
-        <p>Telecommunication Engineer | Data Management Officer | Event Organizer</p>
-        <a href="#contact" class="btn-gold">Work with Me</a>
+        <p>Data Management Officer & Event Organizer</p>
+        <a href="#contact" class="btn-gold">Get in Touch</a>
     </div>
 
     <section id="about">
-        <h2 class="section-title">A Vision for Excellence</h2>
-        <div class="section-subtitle">Biography</div>
+        <h2 class="section-title">Where Data Meets Intention</h2>
+        <div class="section-subtitle">About Me</div>
         <div class="about-grid">
             <div class="about-text">
-                <p>วิศวกรโทรคมนาคมรุ่นใหม่ที่มีความหลงใหลในจุดตัดระหว่างเทคโนโลยีและมนุษย์ ปัจจุบันทำหน้าที่ขับเคลื่อนข้อมูลเชิงสถิติเพื่อการพัฒนาจังหวัด</p>
-                <p>ด้วยพื้นฐานด้านวิศวกรรมศาสตร์ ผสมผสานกับทักษะการบริหารจัดการเหตุการณ์ (Event Management) ทำให้ดิฉันมีมุมมองที่ครอบคลุมทั้งด้านความแม่นยำทางเทคนิคและความคิดสร้างสรรค์ พร้อมเปิดรับโอกาสใหม่ๆ ในการสร้างสรรค์นวัตกรรมที่ตอบโจทย์ผู้ใช้งาน</p>
+                <p>เราเชื่อว่าข้อมูลทุกส่วนมีความหมายและสามารถนำมาต่อยอดเพื่อสร้างสรรค์สิ่งใหม่ได้ ดิฉันมีความมุ่งมั่นในการจัดการข้อมูลและนำเสนอให้เข้าใจง่าย โดยมีพื้นฐานด้านวิศวกรรมโทรคมนาคมที่เป็นรากฐานสำคัญในการคิดวิเคราะห์อย่างเป็นระบบ</p>
+                <p>นอกจากมิติของข้อมูล ดิฉันยังหลงใหลในการขับเคลื่อนโครงการ ทั้งการบริหารจัดการงานอีเวนต์สเกลใหญ่ และการร่วมพัฒนาชุมชน เพื่อสร้างผลลัพธ์ที่เป็นรูปธรรมและยั่งยืนต่อสังคม</p>
             </div>
             <div class="about-image"></div>
         </div>
     </section>
 
-    <div class="bg-section" id="expertise">
-        <section>
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="section-subtitle">Core Skills</div>
+    <div class="bg-section">
+        <section id="skills">
+            <h2 class="section-title">Our Expertise</h2>
+            <div class="section-subtitle">Professional Skills</div>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <span class="skill-icon">📊</span>
-                    <h3>Data Analysis</h3>
-                    <p>การประมวลผลและนำเสนอข้อมูลด้วย Power BI และเครื่องมือทางสถิติ เพื่อการวางแผนงานระดับจังหวัด</p>
+                    <div class="skill-icon">📊</div>
+                    <h3>Data Visualization</h3>
+                    <p>การใช้ Power BI และ Power Query ในการวิเคราะห์และนำเสนอข้อมูลเชิงสถิติ เพื่อสนับสนุนการตัดสินใจระดับนโยบายจังหวัด</p>
                 </div>
                 <div class="skill-card">
-                    <span class="skill-icon">🎪</span>
-                    <h3>Event Design</h3>
-                    <p>การบริหารจัดการโปรเจกต์ขนาดใหญ่ ตั้งแต่ขั้นตอนการระดมสมองไปจนถึงการประสานงานหน้างานอย่างมืออาชีพ</p>
+                    <div class="skill-icon">🎪</div>
+                    <h3>Event Organizing</h3>
+                    <p>การวางแผน บริหารจัดการ และสื่อสารการตลาดสำหรับงานเทศกาล เช่น Phing Fai Film & Music Festival และโครงการ GenAI Series</p>
                 </div>
                 <div class="skill-card">
-                    <span class="skill-icon">🛰️</span>
-                    <h3>Comm. Systems</h3>
-                    <p>พื้นฐานวิศวกรรมโทรคมนาคม การวิเคราะห์โครงข่าย และระบบประมวลผลปัญญาประดิษฐ์เบื้องต้น</p>
+                    <div class="skill-icon">🤝</div>
+                    <h3>Community Development</h3>
+                    <p>ประสานงานและขับเคลื่อนโครงการร่วมกับภาครัฐและกองทุนท้องถิ่น เพื่อพัฒนาคุณภาพชีวิตและสาธารณสุขในชุมชน</p>
                 </div>
             </div>
         </section>
     </div>
 
     <section id="projects">
-        <h2 class="section-title">The Masterworks</h2>
-        <div class="section-subtitle">Academic Projects</div>
+        <h2 class="section-title">Academic Achievements</h2>
+        <div class="section-subtitle">Key Projects</div>
         
         <div class="project-card">
-            <h3 style="color: var(--text-dark); margin-bottom: 10px;">ระบบนับรถบนพื้นฐานปัญญาประดิษฐ์ (AI Vehicle Counter)</h3>
-            <p style="color: var(--text-muted);">การพัฒนาโมเดลปัญญาประดิษฐ์เพื่อตรวจจับและนับจำนวนยานพาหนะบนถนนแบบ Real-time เพื่อนำข้อมูลไปสนับสนุนงานวิจัยเชิงสถิติและการจราจร</p>
-            <div>
-                <span class="project-tag">YOLO MODEL</span>
-                <span class="project-tag">PYTHON</span>
-                <span class="project-tag">COMPUTER VISION</span>
-            </div>
+            <h3>1. ระบบนับรถบนพื้นฐานปัญญาประดิษฐ์ (AI Vehicle Counter)</h3>
+            <p>พัฒนาโมเดลปัญญาประดิษฐ์ในการตรวจจับและนับจำนวนยานพาหนะแบบ Real-time เพื่อสนับสนุนงานวิจัยเชิงสถิติและการจัดการจราจร</p>
+            <div class="project-tag">YOLO Model</div>
+            <div class="project-tag">Computer Vision</div>
+            <div class="project-tag">Python</div>
         </div>
 
         <div class="project-card">
-            <h3 style="color: var(--text-dark); margin-bottom: 10px;">ระบบตรวจจับก๊าซรั่วอัจฉริยะ (Smart Gas Leakage Detection)</h3>
-            <p style="color: var(--text-muted);">ออกแบบและสร้างระบบความปลอดภัยสำหรับโรงงานเชื้อเพลิง แจ้งเตือนผ่าน Microprocessor โดยใช้เซนเซอร์ MQ-2 และเขียนโปรแกรมด้วย Arduino IDE</p>
-            <div>
-                <span class="project-tag">ARDUINO</span>
-                <span class="project-tag">IOT</span>
-                <span class="project-tag">MQ-2 SENSOR</span>
-            </div>
+            <h3>2. ระบบตรวจจับการรั่วไหลของก๊าซอัจฉริยะ (Smart Gas Leakage Detection)</h3>
+            <p>ออกแบบระบบความปลอดภัยในโรงงานเชื้อเพลิง แจ้งเตือนผ่าน Microprocessor โดยใช้เซนเซอร์ MQ-2 และควบคุมการทำงานด้วย Arduino</p>
+            <div class="project-tag">Microprocessor</div>
+            <div class="project-tag">Arduino IDE</div>
+            <div class="project-tag">MQ-2 Sensor</div>
         </div>
     </section>
 
-    <div class="bg-section" id="experience">
-        <section>
-            <h2 class="section-title">The Professional Journey</h2>
+    <div class="bg-section">
+        <section id="experience">
+            <h2 class="section-title">Professional Journey</h2>
             <div class="section-subtitle">Experience & Education</div>
-            
             <div class="timeline-container">
                 <div class="timeline-image"></div>
                 <div class="timeline-content">
                     <div class="timeline-item">
                         <span class="timeline-date">เมษายน 2569 - ปัจจุบัน</span>
                         <h3>Data Management Officer</h3>
-                        <p style="color: var(--primary-gold); font-size: 0.9rem; margin-bottom: 10px;">สำนักงานสถิติจังหวัดขอนแก่น</p>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">รับผิดชอบการทำ Data Cleaning และ Visualization ข้อมูลเชิงพื้นที่เพื่อสนับสนุนการตัดสินใจระดับนโยบาย</p>
+                        <p style="color: var(--text-muted); font-weight: 500;">สำนักงานสถิติจังหวัดขอนแก่น</p>
+                        <p style="font-size: 0.95rem;">ดูแลการจัดการข้อมูล ประมวลผล และเตรียม Data Visualization เพื่อแสดงสถานะข้อมูลที่สำคัญของจังหวัด</p>
                     </div>
 
                     <div class="timeline-item">
                         <span class="timeline-date">กุมภาพันธ์ 2568</span>
-                        <h3>วิศวกรรมศาสตรบัณฑิต (วิศวกรรมโทรคมนาคม)</h3>
-                        <p style="color: var(--primary-gold); font-size: 0.9rem; margin-bottom: 10px;">มหาวิทยาลัยเทคโนโลยีสุรนารี</p>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">สำเร็จการศึกษาด้วยความเชี่ยวชาญด้านระบบสื่อสาร และการประยุกต์ใช้เทคโนโลยีสมัยใหม่ในงานวิศวกรรม</p>
+                        <h3>ปริญญาตรี วิศวกรรมโทรคมนาคม</h3>
+                        <p style="color: var(--text-muted); font-weight: 500;">มหาวิทยาลัยเทคโนโลยีสุรนารี</p>
+                        <p style="font-size: 0.95rem;">สำเร็จการศึกษาพร้อมความเชี่ยวชาญด้านระบบสื่อสาร การวิเคราะห์เครือข่าย และการประยุกต์ใช้เทคโนโลยีปัญญาประดิษฐ์</p>
                     </div>
                 </div>
             </div>
@@ -270,13 +262,14 @@
     </div>
 
     <footer id="contact">
-        <div class="footer-logo">PIMYEESA.H</div>
-        <p>เปิดรับความท้าทายใหม่ๆ และการร่วมงานเพื่อพัฒนาสังคมผ่านเทคโนโลยี</p>
-        <p>📍 Khon Kaen, Thailand</p>
-        <p style="margin: 25px 0;">
-            <a href="mailto:your.email@example.com" class="btn-gold">Email Me</a>
-        </p>
-        <p style="margin-top: 50px; font-size: 0.8rem; letter-spacing: 1px;">© 2026 PIMYEESA HUDSAPIM. ALL RIGHTS RESERVED.</p>
+        <h2 style="margin-bottom: 20px; font-weight: 400; color: var(--primary-gold);">Get in Touch</h2>
+        <p>พร้อมเปิดรับโอกาสใหม่ๆ ในการร่วมงานและพัฒนาโปรเจกต์ที่น่าสนใจ</p>
+        <p>📍 ขอนแก่น, ประเทศไทย</p>
+        <p>📧 pimyeesa.h@email.com | 📞 08X-XXX-XXXX</p>
+        <div style="margin-top: 30px;">
+            <a href="mailto:pimyeesa.h@email.com" class="btn-gold">ติดต่อทางอีเมล</a>
+        </div>
+        <p style="margin-top: 50px; font-size: 0.7rem; color: #666;">© 2026 Pimyeesa Hudsapim. All rights reserved.</p>
     </footer>
 
 </body>
