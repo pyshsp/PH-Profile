@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile | Data & Event Management</title>
+    <title>Pimyeesa Hudsapim | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-gold: #c5a880;
             --bg-light: #fcfbfa;
             --bg-section: #f4f0ec;
-            --text-dark: #2c2c2c; /* สีมืดหลัก */
-            --text-muted: #444444; /* ปรับให้มืดลงจากเดิมเพื่อให้อ่านง่าย */
+            --text-dark: #2c2c2c;
+            --text-muted: #444444;
             --white: #ffffff;
         }
 
@@ -22,6 +22,7 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.7;
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3 { 
@@ -53,6 +54,7 @@
             font-weight: 700; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
+            color: var(--primary-gold);
         }
         nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
         nav ul li a { 
@@ -77,17 +79,15 @@
         }
 
         .hero h1 { font-size: 4rem; color: var(--text-dark); margin-bottom: 10px; }
-        
-        /* แก้ไขส่วนนี้: ปรับสีตัวอักษรให้มืดลง (Darker Text) */
         .hero p { 
             font-family: 'Oswald', sans-serif;
             font-size: 1.5rem; 
-            color: #1a1a1a; /* ใช้สีเกือบดำเพื่อให้ตัดกับพื้นหลังชัดเจน */
+            color: #1a1a1a; 
             margin-bottom: 30px; 
             max-width: 600px; 
             font-weight: 600;
             letter-spacing: 1.5px;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.5); /* เพิ่มเงาขาวบางๆ ช่วยให้อ่านง่ายขึ้น */
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
         }
 
         .btn-gold {
@@ -103,7 +103,6 @@
             transition: all 0.3s;
             display: inline-block;
         }
-
         .btn-gold:hover { background-color: var(--primary-gold); transform: translateY(-2px); }
 
         /* Global Section */
@@ -129,76 +128,194 @@
             box-shadow: 15px 15px 0px var(--primary-gold);
         }
 
-            </div> <br>
+        /* Skills Grid */
+        .bg-section { background-color: var(--bg-section); width: 100%; padding: 40px 0; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .skill-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover { transform: translateY(-10px); }
+        .skill-icon { font-size: 2.5rem; margin-bottom: 20px; }
+        .skill-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--primary-gold); }
+        .skill-card p { font-size: 0.95rem; color: var(--text-muted); text-align: justify; }
+
+        /* Project Cards */
+        .project-card {
+            background: var(--white);
+            padding: 30px;
+            border-left: 5px solid var(--text-dark);
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .project-tag {
+            display: inline-block;
+            background: var(--bg-section);
+            color: var(--text-dark);
+            padding: 2px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* Timeline Section */
+        .timeline-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start; }
+        .timeline-image { 
+            background: url('Graduate2.jfif') center/cover; 
+            height: 400px; 
+            position: sticky;
+            top: 100px;
+        }
+        .timeline-item {
+            background: var(--white);
+            padding: 30px;
+            border-left: 4px solid var(--primary-gold);
+            margin-bottom: 20px;
+        }
+        .timeline-date { color: var(--primary-gold); font-family: 'Oswald', sans-serif; font-weight: 600; margin-bottom: 5px; display: block; }
+
+        /* Footer */
+        footer { background-color: #1a1a1a; color: #ffffff; text-align: center; padding: 60px 20px; }
+        footer p { color: #aaaaaa; margin: 5px 0; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .about-grid, .timeline-container { grid-template-columns: 1fr; }
+            .timeline-image { height: 300px; position: relative; top: 0; }
+            nav { padding: 15px 20px; }
+            nav ul { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PIMYEESA.H</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Expertise</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Journey</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Pimyeesa Hudsapim</h1>
+        <p>Data Management Officer & Telecommunication Engineer</p>
+        <a href="#contact" class="btn-gold">Get in Touch</a>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">Where Data Meets Intention</h2>
+        <div class="section-subtitle">Biography</div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I believe every piece of data holds meaning and can be leveraged to create something new. I am dedicated to managing and presenting information in an easy-to-understand way, supported by a solid foundation in Telecommunications Engineering.</p>
+                <p>Beyond data, I am passionate about driving impact through diverse projects, from high-stakes rescue volunteering to managing business operations at <strong>Tor-Mai Café</strong>.</p>
+            </div>
+            <div class="about-image"></div>
+        </div>
+    </section>
+
+    <div class="bg-section" id="skills">
+        <section>
+            <h2 class="section-title">Core Expertise</h2>
+            <div class="section-subtitle">Skills & Roles</div>
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon">🚑</div>
-                    <h3>Emergency Response & Public Safety</h3>
-                    <p>I have dedicated over three years as a Volunteer Rescue first responder with the SUT Volunteering Club. My role involved providing initial assessments and first aid to injured individuals during accidents and public emergencies, as well as coordinating critical information with hospital units and participating in safety drills.</p>
+                    <h3>Public Safety</h3>
+                    <p>Over 3 years as a Volunteer Rescue first responder. Skilled in initial assessments, first aid, and emergency coordination with hospital units.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">💻</div>
-                    <h3>Technical Design & Programming</h3>
-                    <p>My technical toolkit is comprised of engineering design software such as AutoCAD and SolidWorks. I am proficient in basic Python programming and scripting using PyCharm , and I possess creative skills in visual design and content creation through the use of Canva and Photoshop.</p>
+                    <h3>Technical Design</h3>
+                    <p>Proficient in AutoCAD, SolidWorks, and basic Python. Creative in visual design using Photoshop and Canva for professional content.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">☕</div>
-                    <h3>Business Operations & Management</h3>
-                    <p>As the owner and barista of Tor-Mai Café , I manage all daily operations, including stock control, budgeting, and customer relationship building. I also handle the brand's digital presence by promoting the shop and managing social media content across Facebook, Instagram, and TikTok.</p>
+                    <h3>Business Ops</h3>
+                    <p>Owner of Tor-Mai Café. Managing daily operations, budgeting, and social media marketing across TikTok, IG, and Facebook.</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <section id="experience">
+    <section id="projects">
+        <h2 class="section-title">Academic Works</h2>
+        <div class="section-subtitle">Engineering Projects</div>
         
-        <h2 class="section-title">Professional Journey</h2>
-        <div class="section-subtitle">Experience & Education </div>
-        
-        <div class="timeline-container">
-            <div class="timeline-image"></div>
-            
-            <div class="timeline-content">
-                <div class="timeline-item">
-                    <span class="timeline-date">At present</span>
-                    <h3>Data Management Officer (Service Contract)</h3>
-                    <p style="color: var(--text-muted);">Khon Kaen Provincial Statistical Office</p>
-                    <p style="font-size: 0.95rem;">Responsible for data management, processing, and preparing information for presentation to serve as a vital database for the province.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">September - October 2025</span>
-                    <h3>PROJECT COORDINATOR </h3>
-                    <p style="color: var(--text-muted);">AIS Tower2</p>
-                    <p style="font-size: 0.95rem;">-Prepare and verify project documents related to AIS/AWN internet installation.<br>
--Record and update customer information in the system to support job closing and project tracking.
-</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Febuary 2025</span>
-                    <h3>Telecommunications Engineering </h3>
-                    <p style="color: var(--text-muted);">Institute of Engineering | Suranaree University of Technology</p>
-                    <p style="font-size: 0.95rem;">GPAX 2.34</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">October 2025 - Febuary 2025</span>
-                    <h3>INTERN – TELECOM TECHNICIAN ASSISTANT </h3>
-                    <p style="color: var(--text-muted);">National Telecom Public Company Limited (NT) Angthong Province</p>
-                    <p style="font-size: 0.95rem;">- Installed and configured small to medium-sized internet networks.<br>- Conducted on-site network troubleshooting and maintenance.
-- Recorded customer data and generated technical documentation.<br>- Assisted senior technicians in project coordination and technical support.<br>-Record and update customer information in the system to support job closing and project tracking.
-</p>
-                </div>
-            </div>
+        <div class="project-card">
+            <h3>AI Vehicle Counter (YOLO Model)</h3>
+            <p>Developed an AI-based system to detect and count vehicles in real-time, supporting statistical research and traffic management.</p>
+            <span class="project-tag">ARTIFICIAL INTELLIGENCE</span>
+            <span class="project-tag">PYTHON</span>
+        </div>
+
+        <div class="project-card">
+            <h3>Smart Gas Leakage Detection</h3>
+            <p>Designed a safety system for fuel plants using MQ-2 sensors and Arduino IDE to detect and alert gas leakages instantly.</p>
+            <span class="project-tag">IOT</span>
+            <span class="project-tag">MICROPROCESSOR</span>
         </div>
     </section>
+
+    <div class="bg-section" id="experience">
+        <section>
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="section-subtitle">Experience & Education</div>
+            <div class="timeline-container">
+                <div class="timeline-image"></div>
+                <div class="timeline-content">
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">At present</span>
+                        <h3>Data Management Officer</h3>
+                        <p style="color: var(--primary-gold);">Khon Kaen Provincial Statistical Office</p>
+                        <p style="font-size: 0.95rem;">Processing and preparing provincial databases for strategic presentation and public use.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">September - October 2025</span>
+                        <h3>Project Coordinator</h3>
+                        <p style="color: var(--primary-gold);">AIS Tower 2</p>
+                        <p style="font-size: 0.95rem;">Verified internet installation documents and updated customer databases for project tracking.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">February 2025</span>
+                        <h3>B.Eng. Telecommunications Engineering</h3>
+                        <p style="color: var(--primary-gold);">Suranaree University of Technology</p>
+                        <p style="font-size: 0.95rem;">Focusing on network analysis, communication systems, and engineering design.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">Oct 2024 - Feb 2025</span>
+                        <h3>Intern – Telecom Technician</h3>
+                        <p style="color: var(--primary-gold);">National Telecom (NT) Angthong</p>
+                        <p style="font-size: 0.95rem;">Installed internet networks and handled on-site troubleshooting and technical documentation.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
 
     <footer id="contact">
         <h2 style="margin-bottom: 20px; font-weight: 500; color: var(--primary-gold);">Get in Touch</h2>
         <p>Open for new opportunities to collaborate and develop projects together.</p>
-        <p>📍Khon Kaen, Thailand</p>
+        <p>📍 Khon Kaen, Thailand</p>
         <p>📧 Paphzy01@gmail.com | 📞 096-375-4763</p>
         <div style="margin-top: 30px;">
             <a href="mailto:Paphzy01@gmail.com" class="btn-gold">Contact via Email</a>
         </div>
+        <p style="margin-top: 40px; font-size: 0.7rem; color: #555;">© 2026 PIMYEESA HUDSAPIM. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
